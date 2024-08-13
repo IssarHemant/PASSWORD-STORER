@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Pass<span class="X">X</span></div>
+    </nav>
+    <div class="container">
+        <h1 class="welcomeheading">🎉 Welcome to Your Password Manager!</h1>
+        <p class="welcomenote">Ready to simplify your digital life? Safely store and manage your usernames, passwords, and account name all in one place. Your data stays secure, and only you have access. Let’s get started! 🚀</p>
+        <h2 id="your-passwords">Your Passwords <span id="alert">(Copied!)</span></h2>
+        <!-- <p class="alert">Your password has been copied</p> -->
+        <table>
+            <tr>
+                <th>Account Type</th>
+                <th>Username</th>
+                <th>Passwords</th>
+                <th>Actions</th>
+            </tr>
+            
+        </table>
+        <h2 id="add-password">Add a Password</h2>
+        <form action="/submit" method="post">
+            <!-- Text input for username -->
+            <label for="accounttype">Account Type:</label>
+            <input type="text" id="accounttype" name="accounttype" required>
+            <br>
+            <!-- Text input for username -->
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+        
+            <!-- Password input -->
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+        
+            <!-- Submit button -->
+            <button class="btn" type="submit" value="Submit">Submit</button>
+          </form>
+    </div>
+    <footer>
+        <div class="footer">Developed by <span class="name">Hemant Issar</span></div>
+      </footer>
+    <script src="script.js"></script>
+</body>
+</html>

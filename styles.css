@@ -1,0 +1,318 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Add this to your existing CSS */
+body {
+  background-color: rgb(56, 56, 56);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  width: 80%;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #444;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  margin-top: 80px; /* Add top margin to avoid being hidden behind navbar */
+  margin-bottom: 80px; /* Add bottom margin to avoid being hidden behind footer */
+  overflow-y: auto;
+}
+
+/* Navigation Bar */
+nav {
+  background-color: rgb(40, 40, 40);
+  color: white;
+  padding: 12px 3px;
+  display: flex;
+  justify-content: center;
+  position: fixed; /* Change to fixed to keep navbar at the top */
+  width: 100%; /* Ensures the navbar spans the full width of the screen */
+  top: 0; /* Ensures the navbar stays at the top when scrolling */
+  z-index: 1000; /* Increased z-index to stay on top of other elements */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: adds a shadow for better visual separation */
+}
+.logo {
+  margin: 0 23px;
+  font-weight: 800;
+  font-size: 30px;
+  cursor: pointer;
+}
+.X {
+  color: red;
+}
+
+/* Styles for headings */
+h1,
+h2 {
+  position: relative;
+  font-size: 1.5rem;
+  margin: 20px 0;
+  color: #f2f2f2;
+  cursor: pointer;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+h1:hover,
+h2:hover {
+  color: #ff5722; /* Change color on hover */
+  transform: scale(1.05); /* Slightly enlarge the heading on hover */
+}
+h1::before,
+h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 3px;
+  background-color: #ff5722; /* Underline color */
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+h1:hover::before,
+h2:hover::before {
+  transform: scaleX(1); /* Show underline on hover */
+}
+
+/* Interactive Styles for Paragraph */
+p {
+  color: rgb(169, 169, 169);
+  text-align: center;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+p:hover {
+  color: #ffffff; /* Change color on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Styles for 'Your Passwords' heading */
+#your-passwords {
+  margin-bottom: 15px;
+}
+
+/* Styles for 'Add a Password' heading */
+#add-password {
+  margin-top: 30px;
+}
+/* Table Styles */
+table {
+  width: 100%;
+  margin: 20px 0;
+  border: 2px solid #444;
+  border-collapse: collapse;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: center;
+  color: #ddd;
+  background-color: #333;
+  border: 1px solid #444;
+  white-space: nowrap; /* Prevents text from wrapping to the next line */
+}
+
+th {
+  background-color: #444;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+tr:hover {
+  background-color: #555;
+  transform: scale(1.02);
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+tr:nth-child(even) {
+  background-color: #3a3a3a;
+}
+.no-data {
+  text-align: center; /* Center text horizontally */
+  color: #ccc; /* Light gray color for the text */
+  font-style: italic; /* Italic style for emphasis */
+  padding: 20px; /* Add some padding for better spacing */
+  font-size: 1.2rem; /* Larger font size for visibility */
+  background-color: #333; /* Background color to differentiate from the rest */
+  border-top: 2px solid #444; /* Optional: Add a border on top to visually separate */
+  border-bottom: 2px solid #444; /* Optional: Add a border on bottom to visually separate */
+}
+/* Styles for the copy icon */
+.copy-icon {
+  cursor: pointer;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease,
+    filter 0.3s ease;
+  fill: transparent; /* Ensure SVG is transparent to show color change */
+  stroke: #ffffff; /* Default stroke color */
+}
+.copy-icon:hover {
+  stroke: #ff5722; /* Change stroke color on hover */
+  transform: scale(1.2); /* Slightly enlarge the icon on hover */
+  filter: drop-shadow(0 0 8px rgba(255, 87, 34, 0.6)); /* Add shadow effect */
+}
+.copy-icon:active {
+  stroke: #e64a19; /* Darker stroke color on click */
+  transform: scale(1.1); /* Slightly smaller on click */
+  filter: drop-shadow(0 0 5px rgba(255, 87, 34, 0.4)); /* Smaller shadow */
+}
+
+/* Form Styles */
+form {
+  width: 80%;
+  max-width: 500px;
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #333;
+  border: 2px solid #444;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+form:hover {
+  transform: scale(1.02);
+}
+label {
+  color: #ddd;
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+}
+input[type="text"],
+input[type="password"] {
+  width: calc(100% - 24px);
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #555;
+  border: 1px solid #777;
+  border-radius: 5px;
+  color: #ddd;
+  font-size: 1em;
+  transition: background-color 0.2s ease;
+}
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background-color: #666;
+  border-color: #888;
+  outline: none;
+}
+
+/* Buttons */
+.btn {
+  display: flex;
+  padding: 10px 20px;
+  background: black;
+  color: white;
+  font-weight: 900;
+  border: 2px solid gray;
+  border-radius: 8px;
+  margin: 25px auto;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+.btn:hover {
+  background-color: #444;
+  color: #ddd;
+  border-color: white;
+}
+.btnsm {
+  padding: 8px 17px;
+  background: black;
+  color: white;
+  font-weight: 900;
+  border: 2px solid gray;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+.btnsm:hover {
+  background-color: #444;
+  color: #ddd;
+  border-color: white;
+}
+
+/* Images */
+img {
+  cursor: pointer;
+  position: relative;
+  bottom: 7px;
+  width: 15px;
+  height: 13px;
+}
+
+/* Alert */
+#alert {
+  display: none;
+}
+
+/* Sticky Footer Styles */
+footer {
+  background-color: rgb(40, 40, 40);
+  color: white;
+  padding: 12px 3px;
+  font-weight: 800;
+  display: flex;
+  justify-content: center;
+  position: fixed; /* Fixes footer at the bottom */
+  width: 100%;
+  bottom: 0; /* Positions the footer at the bottom of the viewport */
+  z-index: 1000;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for visual separation */
+}
+.name {
+  color: red;
+}
+/* Responsive Design */
+@media only screen and (max-width: 700px) {
+  .welcomeheading {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  .welcomenote {
+    width: 400px;
+  }
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  form {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .welcomeheading {
+    font-size: 1.4rem;
+  }
+  .welcomenote {
+    width: 350px;
+  }
+}
