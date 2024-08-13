@@ -74,8 +74,14 @@ document.querySelector(".btn").addEventListener("click", (e) => {
   e.preventDefault();
   let passwords = localStorage.getItem("passwords");
   if (passwords == null) {
-    alert("There is no data to save. Please enter the data");
-
+    let json = JSON.parse(localStorage.getItem("passwords"));
+    json.push({
+      accounttype: accounttype.value,
+      username: username.value,
+      password: password.value,
+    });
+    alert("Password saved successfully!");
+    localStorage.setItem("passwords", JSON.stringify(json));
   } else {
     let json = JSON.parse(localStorage.getItem("passwords"));
     json.push({
