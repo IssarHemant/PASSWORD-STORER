@@ -217,7 +217,15 @@ input[type="password"]:focus {
   border-color: #888;
   outline: none;
 }
-
+.password-container{
+  position:relative;
+}
+.fa-solid{
+  position:absolute;
+  top:50%;
+  right:10px;
+  color:white;
+}
 /* Buttons */
 .btn {
   display: flex;

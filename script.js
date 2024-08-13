@@ -74,14 +74,8 @@ document.querySelector(".btn").addEventListener("click", (e) => {
   e.preventDefault();
   let passwords = localStorage.getItem("passwords");
   if (passwords == null) {
-    let json = [];
-    json.push({
-      accounttype: accounttype.value,
-      username: username.value,
-      password: password.value,
-    });
-    alert("Password saved successfully!");
-    localStorage.setItem("passwords", JSON.stringify(json));
+    alert("There is no data to save. Please enter the data");
+
   } else {
     let json = JSON.parse(localStorage.getItem("passwords"));
     json.push({
@@ -89,8 +83,27 @@ document.querySelector(".btn").addEventListener("click", (e) => {
       username: username.value,
       password: password.value,
     });
-    alert("password saved successfully!");
+    alert("Password saved successfully!");
     localStorage.setItem("passwords", JSON.stringify(json));
   }
   showPasswords();
+});
+
+const passwordInput = document.getElementById('password');
+const eyeIcon = document.getElementById('eyeIcon');
+
+eyeIcon.addEventListener('click',()=>{
+  //Toggle password visibility
+  if(passwordInput.type==='password'){
+    //Change type to text to show password
+    passwordInput.type='text';
+    eyeIcon.classList.remove('fa-eye');
+    eyeIcon.classList.add('fa-eye-slash'); //Change to "eye-slash" icon
+  }
+  else{
+    //Change type to password to hide password
+    passwordInput.type='password';
+    eyeIcon.classList.remove('fa-eye-slash');
+    eyeIcon.classList.add('fa-eye'); // Change to "eye" icon
+  }
 });
