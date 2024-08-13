@@ -25,7 +25,7 @@ function copyText(txt) {
 }
 
 const deletePassword = (accounttype) => {
-  let a = prompt("Enter a PIN to copy details.");
+  let a = prompt("Enter a PIN to delete details.");
   if (a === "220701") {
     let data = localStorage.getItem("passwords");
     let arr = JSON.parse(data);
